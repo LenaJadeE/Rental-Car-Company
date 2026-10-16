@@ -56,11 +56,29 @@ public class RentalCarCompany {
         double basicRental = days * dailyRate;
 
         double dailyOptions = 0;
-        if
+        if (wantToll) dailyOptions += tollTagRate;
+        if (wantsGps) dailyOptions += gpsRate;
+        if (wantsRoadside) dailyOptions += roadsideRate;
+        double optionsCost = days * dailyOptions;
 
+        double surcharge = 0;
+        if (age < underageLimit) {
+            surcharge = basicRental * underageSurchargeRate;
+        }
+
+        double totalCost = basicRental + optionsCost + surcharge;
+
+        System.out.println();
+        System.out.println("Hello " + name);
+        System.out.println("Pickup date: " + date + " -- " + days + " day rental");
+        System.out.printf("Basic car rental: $%.2f", basicRental);
+        System.out.printf("Options cost: $%.2f");
+        System.out.printf("Underage surcharge: $%.2f");
+        System.out.printf("Total cost: $%.2f");
 
     }
 }
+
 // EXERCISE 1
 // Step 1
 // IMPORTANT: DO NOT just start coding - take time to plan the flow of your application in your notebook.
