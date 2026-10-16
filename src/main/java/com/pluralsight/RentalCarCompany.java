@@ -42,28 +42,28 @@ public class RentalCarCompany {
         public static void formatCustomerInfo(String name, int age, String date, int days,
                                           String toll, String gps, String roadside){
 
-        double dailyRate = 29.99;
-        double tollTagRate = 3.95;
-        double gpsRate = 2.95;
-        double roadsideRate = 3.95;
-        double underageSurchargeRate = 0.30;
-        int underageLimit = 25;
+            double dailyRate = 29.99;
+            double tollTagRate = 3.95;
+            double gpsRate = 2.95;
+            double roadsideRate = 3.95;
+            double underageSurchargeRate = 0.30;
+            int underageLimit = 25;
 
-        boolean wantToll = toll.equalsIgnoreCase("yes");
-        boolean wantsGps = gps.equalsIgnoreCase("yes");
-        boolean wantsRoadside = roadside.equalsIgnoreCase("yes");
+            boolean wantToll = toll.equalsIgnoreCase("yes");
+            boolean wantsGps = gps.equalsIgnoreCase("yes");
+            boolean wantsRoadside = roadside.equalsIgnoreCase("yes");
 
-        double basicRental = days * dailyRate;
+            double basicRental = days * dailyRate;
 
-        double dailyOptions = 0;
-        if (wantToll) dailyOptions += tollTagRate;
-        if (wantsGps) dailyOptions += gpsRate;
-        if (wantsRoadside) dailyOptions += roadsideRate;
-        double optionsCost = days * dailyOptions;
+            double dailyOptions = 0;
+            if (wantToll) dailyOptions += tollTagRate;
+            if (wantsGps) dailyOptions += gpsRate;
+            if (wantsRoadside) dailyOptions += roadsideRate;
+            double optionsCost = days * dailyOptions;
 
-        double surcharge = 0;
-        if (age < underageLimit) {
-            surcharge = basicRental * underageSurchargeRate;
+            double surcharge = 0;
+            if (age < underageLimit) {
+                surcharge = basicRental * underageSurchargeRate;
         }
 
         double totalCost = basicRental + optionsCost + surcharge;
