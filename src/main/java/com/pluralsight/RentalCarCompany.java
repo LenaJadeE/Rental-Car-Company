@@ -56,9 +56,12 @@ public class RentalCarCompany {
             double basicRental = days * dailyRate;
 
             double dailyOptions = 0;
-            if (wantToll) dailyOptions += tollTagRate;
-            if (wantsGps) dailyOptions += gpsRate;
-            if (wantsRoadside) dailyOptions += roadsideRate;
+            if (wantToll) {
+                dailyOptions += tollTagRate;}
+            if (wantsGps) {
+                    dailyOptions += gpsRate;}
+            if (wantsRoadside) {
+                dailyOptions += roadsideRate;}
             double optionsCost = days * dailyOptions;
 
             double surcharge = 0;
