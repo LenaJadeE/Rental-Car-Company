@@ -1,37 +1,62 @@
 package com.pluralsight;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class RentalCarCompany {
-    public static void main(String[] args){
-        final double dailyRate = 29.99;
-        final double tollTagRate = 3.95;
-        final double gpsRate = 2.95;
-        final double roadsideRate = 3.95;
-        final double underageSurchargeRate = 0.30;
-        final int underageLimit = 25;
+    public static void main(String[] args) {
+        customerRentalInfo();
 
-        Scanner scanner = new Scanner(System.in);
+    }
 
-        System.out.println("Pickup date: ");
-        String pickupDate = scanner.nextLine();
+        public static void customerRentalInfo() {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Number of days: ");
-        int days = scanner.nextInt();
-        scanner.nextLine();
+            System.out.println("Enter your name: ");
+            String customerName = scanner.nextLine();
 
-        System.out.println("Electronic toll tag (3.95/day)? (yes/no) ");
+            System.out.println("Your current age: ");
+            int customerAge = scanner.nextInt();
+            scanner.nextLine();
 
+            System.out.println("Pickup date: ");
+            String pickupDate = scanner.nextLine();
 
+            System.out.println("Number of days: ");
+            int days = scanner.nextInt();
+            scanner.nextLine();
 
+            System.out.println("Electronic toll tag (3.95/day)? (yes/no): ");
+            String tollAnswer = scanner.nextLine();
 
+            System.out.println("GPS ($2.95/days)? (yes/no): ");
+            String gpsAnswer = scanner.nextLine();
 
+            System.out.println("Roadside assistance (3.95/day)? (yes/no): ");
+            String roadsideAssistance = scanner.nextLine();
 
+            formatCustomerInfo ( customerName, customerAge, pickupDate, days,
+                    tollAnswer, gpsAnswer, roadsideAssistance);
+        }
 
+        public static void formatCustomerInfo(String name, int age, String date, int days,
+                                          String toll, String gps, String roadside){
 
+        double dailyRate = 29.99;
+        double tollTagRate = 3.95;
+        double gpsRate = 2.95;
+        double roadsideRate = 3.95;
+        double underageSurchargeRate = 0.30;
+        int underageLimit = 25;
 
+        boolean wantToll = toll.equalsIgnoreCase("yes");
+        boolean wantsGps = gps.equalsIgnoreCase("yes");
+        boolean wantsRoadside = roadside.equalsIgnoreCase("yes");
 
+        double basicRental = days * dailyRate;
 
+        double dailyOptions = 0;
+        if
 
 
     }
