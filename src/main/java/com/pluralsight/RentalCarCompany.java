@@ -30,7 +30,7 @@ public class RentalCarCompany {
         int days = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Electronic toll tag ($ 3.95/day)? (Yes/No): ");
+        System.out.println("Electronic toll tag ($3.95/day)? (Yes/No): ");
         String tollAnswer = scanner.nextLine();
 
         System.out.println("GPS ($2.95/days)? (Yes/No): ");
