@@ -13,26 +13,31 @@ public class RentalCarCompany {
         int customerAge = scanner.nextInt();
         scanner.nextLine();
 
+        if (customerAge < 16) {
+            System.out.println("Sorry" + customerName + ", renters must be 16 years or older.");
+        } else {
+            rentalQuote(scanner, customerName, customerAge);
+        }
+
+        scanner.close();
+    }
+
+    public static void rentalQuote(Scanner scanner, String customerName, int customerAge) {
         System.out.println("Pickup date: (Month/Day/Year): ");
-        int month = scanner.nextInt();
-        int day = scanner.nextInt();
-        int year = scanner.nextInt();
-        scanner.nextLine();
-        String pickupDate =
+        String pickupDate = scanner.nextLine();
 
         System.out.println("Number of days: ");
         int days = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Electronic toll tag (3.95/day)? (yes/no): ");
+        System.out.println("Electronic toll tag ($ 3.95/day)? (Yes/No): ");
         String tollAnswer = scanner.nextLine();
 
-        System.out.println("GPS ($2.95/days)? (yes/no): ");
+        System.out.println("GPS ($2.95/days)? (Yes/No): ");
         String gpsAnswer = scanner.nextLine();
 
-        System.out.println("Roadside assistance (3.95/day)? (yes/no): ");
+        System.out.println("Roadside assistance ($3.95/day)? (Yes/No): ");
         String roadsideAssistance = scanner.nextLine();
-        
 
         double dailyRate = 29.99;
         double tollTagRate = 3.95;
@@ -66,7 +71,7 @@ public class RentalCarCompany {
         System.out.println();
         System.out.println("Hello " + customerName);
         System.out.println("Pickup date: " + pickupDate);
-        System.out.println("Days of rental" + days);
+        System.out.println("Days of rental: " + days);
         System.out.printf("Basic car rental: $%.2f%n", basicRental);
         System.out.printf("Options cost: $%.2f%n", optionsCost);
         System.out.printf("Underage surcharge: $%.2f%n", surcharge);
@@ -75,8 +80,7 @@ public class RentalCarCompany {
     }
 
     private static boolean isYes(String answer) {
-        return answer.equals("yes") || answer.equals("y");
-    }
+        return answer.equals("Yes") || answer.equals("yes"); }
 }
 
 // EXERCISE 1
