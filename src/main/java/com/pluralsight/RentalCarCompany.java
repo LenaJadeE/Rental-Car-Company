@@ -14,7 +14,7 @@ public class RentalCarCompany {
         scanner.nextLine();
 
         if (customerAge < 16) {
-            System.out.println("Sorry" + customerName + ", renters must be 16 years or older.");
+            System.out.println("Sorry " + customerName + ", renters must be 16 years or older.");
         } else {
             rentalQuote(scanner, customerName, customerAge);
         }
